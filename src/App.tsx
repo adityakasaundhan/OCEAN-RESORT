@@ -22,10 +22,11 @@ import {
   Zap
 } from 'lucide-react';
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&q=100&w=2560";
+const HERO_IMAGE = "https://res.cloudinary.com/dnbkg0on9/image/upload/v1777625734/IMG-20260501-WA0029_r6k2rh.jpg";
 const POOL_IMAGE = "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=1200";
-const GARDEN_IMAGE = "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=1200";
+const GARDEN_IMAGE = "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&q=80&w=1200";
 const INTERIOR_IMAGE = "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=1200";
+const FOUNDER_IMAGE = "https://res.cloudinary.com/dnbkg0on9/image/upload/v1777627009/Screenshot_20260501-144604_Instagram_pvglt1.png";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -121,11 +122,11 @@ export default function App() {
           style={{ scale: heroScale, opacity: heroOpacity, y: heroTranslateY }}
           className="absolute inset-0 z-0"
         >
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/60 z-10" />
           <img 
             src={HERO_IMAGE} 
             alt="Luxury Villa" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -139,7 +140,7 @@ export default function App() {
             <motion.span 
               className="inline-block px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-[10px] uppercase tracking-[0.3em] font-medium mb-6 opacity-60"
             >
-              Private Sanctuary
+              Private Resort
             </motion.span>
             <h1 className="text-6xl md:text-9xl font-display mb-6 leading-[0.9] tracking-tighter text-luxury-gold">
               OCEAN <br className="hidden md:block" /> <span className="text-white">RESORT</span>
@@ -255,7 +256,7 @@ export default function App() {
               { 
                 title: "A-Frame Design", 
                 desc: "Iconic architectural silhouette with towering glass walls.",
-                img: INTERIOR_IMAGE,
+                img: POOL_IMAGE,
                 icon: <Zap className="w-5 h-5" />
               },
               { 
@@ -277,21 +278,29 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="group relative overflow-hidden rounded-3xl h-[450px]"
+                className="group relative overflow-hidden rounded-[32px] h-[450px] glass-panel flex flex-col justify-end p-8 border-white/5"
               >
-                <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/20 to-transparent z-10" />
-                <img 
-                  src={card.img} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
-                  alt={card.title}
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                  <div className="w-10 h-10 rounded-full bg-luxury-gold/20 border border-luxury-gold/50 flex items-center justify-center text-luxury-gold mb-4 group-hover:scale-110 transition-transform">
+                {card.img && (
+                  <>
+                    <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark via-luxury-dark/40 to-transparent z-10" />
+                    <img 
+                      src={card.img} 
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 -z-10" 
+                      alt={card.title}
+                      referrerPolicy="no-referrer"
+                    />
+                  </>
+                )}
+                {!card.img && (
+                  <div className="absolute inset-0 bg-gradient-to-br from-luxury-slate/50 to-luxury-dark/50 -z-10" />
+                )}
+                
+                <div className="relative z-20">
+                  <div className="w-12 h-12 rounded-2xl bg-luxury-gold/20 border border-luxury-gold/50 flex items-center justify-center text-luxury-gold mb-6 group-hover:scale-110 transition-transform shadow-lg">
                     {card.icon}
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 uppercase tracking-tight">{card.title}</h3>
-                  <p className="text-white/60 text-sm">{card.desc}</p>
+                  <h3 className="text-2xl font-display mb-3 uppercase tracking-tight text-white italic">{card.title}</h3>
+                  <p className="text-white/50 text-sm font-light leading-relaxed">{card.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -448,14 +457,20 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-full md:w-1/2 aspect-square max-w-md relative"
+            className="w-full md:w-1/2 aspect-[3/4] md:aspect-[2/3] max-w-lg relative lg:ml-auto"
           >
-            <div className="absolute inset-0 border border-luxury-gold/20 rounded-2xl rotate-3 translate-x-2 translate-y-2 -z-10" />
-            <div className="absolute inset-0 border border-white/10 rounded-2xl -rotate-3 -translate-x-2 -translate-y-2 -z-10" />
-            <div className="w-full h-full glass-panel flex items-center justify-center overflow-hidden bg-luxury-slate/50">
-              <div className="text-center p-8">
-                <span className="text-[120px] font-display text-luxury-gold/10 leading-none">DG</span>
-                <p className="text-luxury-gold text-[10px] tracking-[0.5em] font-bold uppercase -mt-8">Legacy of Excellence</p>
+            <div className="absolute inset-0 border border-luxury-gold/20 rounded-[32px] rotate-2 translate-x-4 translate-y-4 -z-10" />
+            <div className="absolute inset-0 border border-white/5 rounded-[32px] -rotate-2 -translate-x-4 -translate-y-4 -z-10" />
+            <div className="w-full h-full glass-panel overflow-hidden bg-luxury-slate/50 relative group p-0 border-white/10">
+              <img 
+                src={FOUNDER_IMAGE} 
+                alt="Mr. Dev Gupta" 
+                className="w-full h-full object-cover object-top transition-transform duration-1000 group-hover:scale-110"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-luxury-gold text-[10px] tracking-[0.5em] font-bold uppercase">Founder & Visionary</p>
               </div>
             </div>
           </motion.div>
@@ -533,7 +548,7 @@ export default function App() {
             </div>
           </div>
 
-          <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/10">© 2026 Ocean Resort Luxury. Private Sanctuary Enclave.</p>
+          <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/10">© 2026 Ocean Resort Luxury. Private Resort Enclave.</p>
         </motion.div>
       </footer>
 
