@@ -67,7 +67,7 @@ export default function App() {
       {/* Navigation */}
       <motion.nav 
         style={{ backgroundColor: navBackground }}
-        className="fixed top-0 left-0 right-0 z-50 h-20 glass-nav flex items-center px-6 md:px-12 justify-between"
+        className="fixed top-0 left-0 right-0 z-50 h-16 md:h-20 glass-nav flex items-center px-6 md:px-12 justify-between"
       >
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
@@ -75,10 +75,10 @@ export default function App() {
           className="flex items-center gap-2 cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="w-10 h-10 bg-luxury-gold rounded-lg flex items-center justify-center">
-            <Waves className="text-luxury-dark w-6 h-6" />
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-luxury-gold rounded-lg flex items-center justify-center">
+            <Waves className="text-luxury-dark w-5 h-5 md:w-6 md:h-6" />
           </div>
-          <span className="text-xl font-bold tracking-tighter uppercase font-display">Ocean Resort</span>
+          <span className="text-lg md:text-xl font-bold tracking-tighter uppercase font-display">Ocean Resort</span>
         </motion.div>
 
         <div className="hidden md:flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
@@ -143,7 +143,7 @@ export default function App() {
             >
               Private Resort
             </motion.span>
-            <h1 className="text-6xl md:text-9xl font-display mb-6 leading-[0.9] tracking-tighter text-luxury-gold">
+            <h1 className="text-5xl md:text-8xl font-display mb-6 leading-[0.95] tracking-tighter text-luxury-gold">
               OCEAN <br className="hidden md:block" /> <span className="text-white">RESORT</span>
             </h1>
             <p className="text-lg md:text-xl font-light text-white/60 max-w-2xl mx-auto mb-10 tracking-widest uppercase text-xs">
@@ -181,8 +181,8 @@ export default function App() {
             transition={{ duration: 0.8 }}
           >
             <span className="text-luxury-gold text-xs uppercase tracking-[0.4em] font-bold mb-4 block">The Property</span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 font-display">Entire Private Villa <br/> with Full Privacy</h2>
-            <p className="text-white/60 text-lg mb-12 leading-relaxed max-w-lg">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 font-display">Entire Private Villa <br/> with Full Privacy</h2>
+            <p className="text-white/60 text-base md:text-lg mb-12 leading-relaxed max-w-lg font-light">
               Experience the pinnacle of luxury in our unique A-frame architectural marvel. 
               Designed for those who seek tranquility and unmatched privacy, Ocean Resort 
               offers a seamless blend of modern comfort and natural beauty.
@@ -249,7 +249,7 @@ export default function App() {
         <div className="px-6 md:px-12 max-w-7xl mx-auto">
           <div className="mb-16">
             <span className="text-luxury-gold text-xs uppercase tracking-[0.4em] font-bold mb-4 block">Highlights</span>
-            <h2 className="text-4xl md:text-6xl font-bold font-display">Unrivaled Excellence</h2>
+            <h2 className="text-3xl md:text-5xl font-bold font-display">Unrivaled Excellence</h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -312,7 +312,7 @@ export default function App() {
       {/* Amenities Section */}
       <section id="amenities" className="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center">
         <span className="text-luxury-gold text-xs uppercase tracking-[0.4em] font-bold mb-4 block">Convenience</span>
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 font-display">Modern Luxuries Included</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-16 font-display">Modern Luxuries Included</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { icon: <Refrigerator />, label: "Smart Fridge" },
@@ -422,7 +422,7 @@ export default function App() {
 
           <div>
             <span className="text-luxury-gold text-xs uppercase tracking-[0.4em] font-bold mb-4 block">Neighborhood</span>
-            <h2 className="text-4xl md:text-6xl font-display mb-8 leading-tight italic">The Perfect <br/> Remote Setting</h2>
+            <h2 className="text-3xl md:text-5xl font-display mb-8 leading-tight italic">The Perfect <br/> Remote Setting</h2>
             <p className="text-white/60 text-lg mb-10 leading-relaxed font-light">
               Tucked away in a serene garden enclave, strategically located for both accessibility and absolute seclusion.
             </p>
@@ -483,7 +483,7 @@ export default function App() {
             className="w-full md:w-1/2"
           >
             <span className="text-luxury-gold text-xs uppercase tracking-[0.4em] font-bold mb-4 block">Leadership</span>
-            <h2 className="text-4xl md:text-6xl font-display mb-8 leading-none italic">Visionary Behind <br/> The Luxury</h2>
+            <h2 className="text-3xl md:text-5xl font-display mb-8 leading-tight italic">Visionary Behind <br/> The Luxury</h2>
             
             <div className="mb-10">
               <h3 className="text-2xl font-bold uppercase tracking-tight text-white mb-2 italic">Mr. Dev Gupta</h3>
@@ -520,7 +520,7 @@ export default function App() {
            className="max-w-4xl mx-auto"
         >
           <Waves className="w-10 h-10 text-luxury-gold mx-auto mb-8 opacity-50" />
-          <h2 className="text-4xl md:text-7xl font-display mb-12 uppercase tracking-tighter leading-none text-luxury-gold italic">Experience The <br/> Extraordinary</h2>
+          <h2 className="text-3xl md:text-6xl font-display mb-12 uppercase tracking-tighter leading-none text-luxury-gold italic">Experience The <br/> Extraordinary</h2>
           
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <a 
