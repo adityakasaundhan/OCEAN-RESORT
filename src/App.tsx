@@ -12,6 +12,7 @@ import {
   MapPin, 
   Phone, 
   MessageCircle,
+  Mail,
   Menu,
   X,
   ChevronRight,
@@ -548,7 +549,29 @@ export default function App() {
             </div>
           </div>
 
-          <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/10">© 2026 Ocean Resort Luxury. Private Resort Enclave.</p>
+          <div className="flex flex-col gap-6 pt-12 border-t border-white/5">
+            <p className="text-[10px] uppercase tracking-[0.4em] font-bold text-white/10">© 2026 Ocean Resort Luxury. Private Resort Enclave.</p>
+            
+            <div className="glass-panel py-6 px-8 max-w-2xl mx-auto border-white/5 space-y-4">
+              <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-luxury-gold opacity-60 mb-2">Developed by</p>
+              <h4 className="text-xl font-display italic tracking-wide text-white">Forge Eternal Tech</h4>
+              
+              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] uppercase tracking-[0.2em] font-bold text-white/30">
+                <div className="flex items-center gap-2">
+                  <Phone size={12} className="text-luxury-gold/40" />
+                  <span>9511421803 / 8004262191</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail size={12} className="text-luxury-gold/40" />
+                  <span>eternalsforge@gmail.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin size={12} className="text-luxury-gold/40" />
+                  <span>Fatehpur, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </footer>
 
